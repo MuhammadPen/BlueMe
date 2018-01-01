@@ -42,6 +42,17 @@
             android:layout_height="170dp"
             android:layout_alignStart="@+id/card1"
             android:layout_below="@+id/card1"
+            android:layout_marginTop="5dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <VideoView
+            android:id="@+id/card3VideoView"
+            android:layout_width="fill_parent"
+            android:layout_height="170dp"
+            android:layout_alignStart="@+id/card2"
+            android:layout_below="@+id/card2"
+            android:layout_marginTop="5dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -79,9 +90,10 @@
             android:layout_height="170dp"
             android:layout_alignStart="@+id/card2"
             android:layout_below="@+id/card2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:elevation="5dp"
             android:foreground="@drawable/image3"
+            android:onClick="card3Pressed"
             tools:layout_editor_absoluteX="5dp"
             tools:layout_editor_absoluteY="378dp" />
 

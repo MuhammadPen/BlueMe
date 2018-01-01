@@ -1,6 +1,6 @@
 //TO DO :
-//Make video view invisible after playing
-//Insert padding between video views
+//Make video view invisible after playing -done
+//Add padding between video views -done
 //Add media controllers
 //Add full screen video players
 //Convert these into a list for addition of more video views and enable verticle scrolling
@@ -12,6 +12,7 @@
 package com.muhammadpen.blueme;
 
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
@@ -40,41 +41,106 @@ public class MainActivity extends AppCompatActivity {
 
 
         boolean playback = false;
+
+        //Setting up views
         card1VideoView = findViewById(R.id.card1VideoView);
         card1 = findViewById(R.id.card1);
+
+        //Setting up video link
         String uriPath = "android.resource://com.muhammadpen.blueme/" + R.raw.leaves;
         Uri uri = Uri.parse(uriPath);
         card1VideoView.setVideoURI(uri);
+
         if (playback == false) {
+
+            //Playing the video
             card1.animate().alpha(0);
+            card1VideoView.animate().alpha(1);
             card1VideoView.start();
 
-            playback = true;
-        }else{
-            card1.animate().alpha(1);
+            card1VideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+            {
+                @Override
+                public void onCompletion(MediaPlayer mp1)
+                {
+                    // Video Playing is completed
+                    card1.animate().alpha(1);
+                    card1VideoView.animate().alpha(0);
+                }
+            });
         }
 
     }
 
     public void card2Pressed(View view){
 
-
         boolean playback = false;
+
+        //Setting up views
         card2VideoView = findViewById(R.id.card2VideoView);
         card2 = findViewById(R.id.card2);
+
+        //Setting up video link
         String uriPath = "android.resource://com.muhammadpen.blueme/" + R.raw.bird;
         Uri uri = Uri.parse(uriPath);
         card2VideoView.setVideoURI(uri);
+
         if (playback == false) {
+
+            //Playing the video
             card2.animate().alpha(0);
+            card2VideoView.animate().alpha(1);
             card2VideoView.start();
 
-            playback = true;
-        }else{
-            card2.animate().alpha(1);
+            card2VideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+            {
+                @Override
+                public void onCompletion(MediaPlayer mp2)
+                {
+                    // Video Playing is completed
+                    card2.animate().alpha(1);
+                    card2VideoView.animate().alpha(0);
+                }
+            });
         }
 
     }
+
+    public void card3Pressed(View view){
+
+
+        boolean playback = false;
+
+        //Setting up views
+        card3VideoView = findViewById(R.id.card3VideoView);
+        card3 = findViewById(R.id.card3);
+
+        //Setting up video link
+        String uriPath = "android.resource://com.muhammadpen.blueme/" + R.raw.bunny;
+        Uri uri = Uri.parse(uriPath);
+        card3VideoView.setVideoURI(uri);
+
+        if (playback == false) {
+
+            //Playing the video
+            card3.animate().alpha(0);
+            card3VideoView.animate().alpha(1);
+            card3VideoView.start();
+
+            card3VideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+            {
+                @Override
+                public void onCompletion(MediaPlayer mp3)
+                {
+                    // Video Playing is completed
+                    card3.animate().alpha(1);
+                    card3VideoView.animate().alpha(0);
+                }
+            });
+        }
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
