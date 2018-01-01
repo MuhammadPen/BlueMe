@@ -1,8 +1,8 @@
 //TO DO :
 //Make video view invisible after playing -done
 //Add padding between video views -done
-//Add media controllers
-//Add full screen video players
+//Fix the splash screen -done
+//Add full screen video players with media controllers
 //Convert these into a list for addition of more video views and enable verticle scrolling
 //Use android icons and add a play-icon on every thumb nail
 //(Late development) Make it so that a user can use a media controller to enter full screen
@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Initializing views and variables etc
     ImageView splashScreen = null;
     CountDownTimer splashScreenTimer;
     VideoView card1VideoView = null;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             card1VideoView.animate().alpha(1);
             card1VideoView.start();
 
+
             card1VideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
             {
                 @Override
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     // Video Playing is completed
                     card1.animate().alpha(1);
                     card1VideoView.animate().alpha(0);
+
                 }
             });
         }
@@ -153,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Splash screen with fade animation
         splashScreen = findViewById(R.id.splashScreenImageView);
-        splashScreenTimer = new CountDownTimer(1000, 10) {
+        splashScreen.bringToFront();
+        splashScreenTimer = new CountDownTimer(1000, 100) {
             @Override
             public void onTick(long l) {
 
@@ -170,8 +175,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 }
