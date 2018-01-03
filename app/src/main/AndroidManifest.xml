@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <meta-data
-                android:name="com.bugsnag.android.API_KEY"
-                android:value="99bfaba4a177a4cc17fca828d2b8f48a"/>
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
