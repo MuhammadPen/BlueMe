@@ -40,39 +40,42 @@
 
                 <ImageButton
                     android:id="@+id/searchButton"
-                    android:layout_width="70dp"
+                    android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/vid1"
-                    android:layout_alignParentTop="true"
+                    android:layout_above="@+id/vid1Thumbnail"
+                    android:layout_toEndOf="@+id/searchEditText"
                     android:backgroundTint="@android:color/holo_blue_light"
-                    app:srcCompat="@drawable/ic_search_black_24dp" />
+                    android:src="@drawable/ic_search_black_24dp" />
 
-                <com.google.android.youtube.player.YouTubePlayerView
-                    android:id="@+id/vid1"
+                <ImageView
+                    android:id="@+id/vid1Thumbnail"
                     android:layout_width="fill_parent"
                     android:layout_height="200dp"
                     android:layout_below="@+id/searchEditText"
-                    android:layout_margin="5dp">
+                    android:layout_margin="5dp"
+                    android:onClick="vid1ThumbnailOnClick">
 
-                </com.google.android.youtube.player.YouTubePlayerView>
+                </ImageView>
 
-                <com.google.android.youtube.player.YouTubePlayerView
-                    android:id="@+id/vid2"
+                <ImageView
+                    android:id="@+id/vid2Thumbnail"
                     android:layout_width="fill_parent"
                     android:layout_height="200dp"
-                    android:layout_below="@+id/vid1"
-                    android:layout_margin="5dp">
+                    android:layout_below="@+id/vid1Thumbnail"
+                    android:layout_margin="5dp"
+                    android:onClick="vid2ThumbnailOnClick">
 
-                </com.google.android.youtube.player.YouTubePlayerView>
+                </ImageView>
 
-                <com.google.android.youtube.player.YouTubePlayerView
-                    android:id="@+id/vid3"
+                <ImageView
+                    android:id="@+id/vid3Thumbnail"
                     android:layout_width="fill_parent"
                     android:layout_height="200dp"
-                    android:layout_below="@+id/vid2"
-                    android:layout_margin="5dp">
+                    android:layout_below="@+id/vid2Thumbnail"
+                    android:layout_margin="5dp"
+                    android:onClick="vid3ThumbnailOnClick">
 
-                </com.google.android.youtube.player.YouTubePlayerView>
+                </ImageView>
 
             </RelativeLayout>
         </LinearLayout>
